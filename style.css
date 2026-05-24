@@ -1,0 +1,337 @@
+:root {
+    --primary-color: #0d9488;
+    --primary-hover: #0f766e;
+    --bg-color: #f0fdfa;
+    --card-bg: #ffffff;
+    --text-main: #1f2937;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+    --teal-accent: #0f766e;
+    --teal-bg: #ccfbf1;
+    --green-risk: #059669;
+    --green-bg: #d1fae5;
+    --red-risk: #dc2626;
+    --red-bg: #fee2e2;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.5;
+}
+
+header {
+    background-color: var(--card-bg);
+    border-bottom: 2px solid var(--primary-color);
+    padding: 1rem 0;
+}
+
+.header-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5rem;
+}
+
+.logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.badge {
+    background-color: var(--teal-bg);
+    color: var(--teal-accent);
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border: 1px solid #99f6e4;
+}
+
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+.how-to-use, .patient-info, .prediction-result {
+    background-color: var(--card-bg);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+}
+
+h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.how-to-use h2 {
+    color: var(--teal-accent);
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    border-left: 3px solid var(--teal-accent);
+    padding-left: 0.5rem;
+    margin-left: -2rem;
+    margin-bottom: 1.5rem;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    flex: 1;
+}
+
+.step-number {
+    background-color: var(--teal-accent);
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.875rem;
+    flex-shrink: 0;
+}
+
+.step-text h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.step-text p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.subtitle {
+    color: var(--text-muted);
+    margin-top: -1rem;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-main);
+}
+
+label span {
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+input, select {
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-family: inherit;
+    background-color: #fcfcfc;
+    color: var(--text-main);
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--teal-accent);
+    box-shadow: 0 0 0 2px rgba(13, 148, 136, 0.1);
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    background-color: #f9fafb;
+    padding: 1.5rem;
+    margin: 2rem -2rem -2rem -2rem;
+    border-bottom-left-radius: 0.75rem;
+    border-bottom-right-radius: 0.75rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.btn-predict {
+    flex: 1;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.875rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-predict:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-reset {
+    background-color: white;
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    padding: 0.875rem 2rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-reset:hover {
+    background-color: #f3f4f6;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.result-card {
+    background-color: #fcfcfc;
+    border-radius: 0.5rem;
+    border: 1px solid var(--border-color);
+    padding: 2.5rem;
+    text-align: center;
+}
+
+.risk-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.risk-high {
+    background-color: var(--card-bg);
+    color: var(--red-risk);
+    border: 2px solid #fecaca;
+    box-shadow: 0 4px 14px 0 rgba(239, 68, 68, 0.1);
+}
+
+.risk-low {
+    background-color: var(--card-bg);
+    color: var(--green-risk);
+    border: 2px solid #a7f3d0;
+    box-shadow: 0 4px 14px 0 rgba(16, 185, 129, 0.1);
+}
+
+.confidence-label {
+    font-size: 0.875rem;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.progress-bar-container {
+    height: 10px;
+    background-color: var(--border-color);
+    border-radius: 9999px;
+    overflow: hidden;
+    margin: 0 auto 0.5rem auto;
+    max-width: 400px;
+}
+
+.progress-bar {
+    height: 100%;
+    border-radius: 9999px;
+    transition: width 1s ease-in-out;
+}
+
+.progress-high {
+    background-color: var(--red-risk);
+}
+
+.progress-low {
+    background-color: var(--green-risk);
+}
+
+.confidence-value {
+    font-weight: 600;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+}
+
+.disclaimer {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    text-align: left;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+footer {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    padding: 1rem 2rem 3rem 2rem;
+}
+
+.loading-state {
+    background-color: var(--red-bg);
+    color: var(--red-risk);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+    .steps {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    .form-actions {
+        flex-direction: column;
+    }
+    .btn-reset {
+        width: 100%;
+    }
+}
