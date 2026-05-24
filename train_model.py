@@ -7,7 +7,7 @@ import os
 
 def generate_mock_dataset(n_samples=1000):
     np.random.seed(42)
-    # Generate somewhat realistic mock data based on UCI Heart Disease dataset ranges
+    # Generate mock data
     data = {
         'age': np.random.randint(29, 78, n_samples),
         'sex': np.random.choice([0, 1], n_samples),
